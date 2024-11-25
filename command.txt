@@ -1,0 +1,3 @@
+{
+    "Open the camera" : "Open the camera for object detection -> use 'q' on keyboard to leave"
+}
