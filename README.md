@@ -35,7 +35,7 @@ So be patient.
 
 If you don't want message from log studown of RealtimeSTT:
 Open site-packages folder -> RealtimeSTT -> audio_recorder.py then put in comment line 1560
-Sometimes a token is asket for using models from HuggingFace
+Sometimes a token is asked for using models from HuggingFace
 To prevent this just connect into you account and create a token in you account page
 Then go to the page of the model and accept the utilisation conditions.
 
@@ -47,4 +47,4 @@ Utilisation :
 - You talk into the mic when it's saying "Start recording" -> if you don't use specific command it'll use for now a chat ai to answer (it takes quite few times depends your computer)
 - Then if you want to do some command you can see all the commands in the txt file "command.txt"
 - For object detection you can see all possible detections with "yolov8class.txt"
-- To implement something you must take a model with size with maximum 4g
+- To implement something you must take a model with size with maximum 4Gb

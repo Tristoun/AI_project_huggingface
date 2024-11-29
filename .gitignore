@@ -5,3 +5,4 @@ realtimesst.log
 .git
 Scripts
 share
+project/__pycache__
