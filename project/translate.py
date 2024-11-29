@@ -1,5 +1,4 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-from huggingface_hub import login
 import torch
 import sys
 torch.backends.cuda.matmul.allow_tf32 = True
@@ -11,7 +10,6 @@ class Translator:
 
         self.model_name = "Helsinki-NLP/opus-mt-en-fr"
         
-        #SINON CA NE MARCHE PAS... 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
 
@@ -25,7 +23,7 @@ class Translator:
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
     
     
-    def translate(self, text: str, max_length: int = 100):
+    def translate_enfr(self, text: str, max_length: int = 100):
 
         inputs = self.tokenizer(
             text,

@@ -21,11 +21,14 @@ Then you can clone the repo here (git clone...)
 
 Install require Librairies:
 pip install RealtimeSTT (if you are on Ubuntu and it failed to install use sudo apt-get install portaudio19-dev and then retry the installation of this package)
-pip install -U transformers
-pip install torch 
-pip install opencv-python
-pip install ultralytics
-pip install supervision
+- pip install -U transformers
+- pip install torch 
+- pip install opencv-python
+- pip install ultralytics
+- pip install supervision
+- pip install accelerate
+- pip install sentencepiece
+- pip install sacremoses
 
 When you launch the project it will take a while depending on your internet connection it needed to download the model you requests
 So be patient.
@@ -44,3 +47,4 @@ Utilisation :
 - You talk into the mic when it's saying "Start recording" -> if you don't use specific command it'll use for now a chat ai to answer (it takes quite few times depends your computer)
 - Then if you want to do some command you can see all the commands in the txt file "command.txt"
 - For object detection you can see all possible detections with "yolov8class.txt"
+- To implement something you must take a model with size with maximum 4g

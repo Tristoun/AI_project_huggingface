@@ -1,3 +1,4 @@
 {
     "Open the camera" : "Open the camera for object detection -> use 'q' on keyboard to leave"
+    "Translate" : "Allow to translate english to french text"
 }

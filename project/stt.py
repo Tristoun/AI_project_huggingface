@@ -4,7 +4,7 @@ from RealtimeSTT import AudioToTextRecorder
 
 class AudioRecorder() :
     def __init__(self) :
-        self.recorder = AudioToTextRecorder(model="tiny.en", spinner=False, no_log_file=True, compute_type="float32",)
+        self.recorder = AudioToTextRecorder(model="small.en", spinner=False, no_log_file=True, compute_type="float32",)
 
     def print_text(self, text) :
         print(text)

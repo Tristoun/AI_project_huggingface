@@ -45,3 +45,7 @@ class ChatAI() :
 
         response = self.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
         return response
+
+if __name__ == "__main__":
+    bot = ChatAI()
+    output = bot.generate_text("Hello how are you ?")
