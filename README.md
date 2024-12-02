@@ -29,6 +29,7 @@ pip install RealtimeSTT (if you are on Ubuntu and it failed to install use sudo 
 - pip install accelerate
 - pip install sentencepiece
 - pip install sacremoses
+- pip install elevenlabs
 
 When you launch the project it will take a while depending on your internet connection it needed to download the model you requests
 So be patient.
@@ -44,6 +45,7 @@ If you have warning during model installation, you can enable developper paramet
 Then to try the project start AI.py !
 
 Utilisation :
+- Please create your api_key to upload it on a file called api_text.txt outside the project folder
 - You talk into the mic when it's saying "Start recording" -> if you don't use specific command it'll use for now a chat ai to answer (it takes quite few times depends your computer)
 - Then if you want to do some command you can see all the commands in the txt file "command.txt"
 - For object detection you can see all possible detections with "yolov8class.txt"

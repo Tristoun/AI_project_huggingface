@@ -2,6 +2,7 @@ from stt import AudioRecorder
 from text_generation import ChatAI
 from object_detection import ObjectDetection
 from translate import Translator
+from tts import TTS
 
 class AI() :
     def __init__(self) -> None:
@@ -9,6 +10,7 @@ class AI() :
         self.chat = ChatAI()
         self.objdetect = ObjectDetection()
         self.translator = Translator()
+        self.speaker = TTS()
 
     def log(self, output) :
         print(output)
@@ -20,7 +22,7 @@ class AI() :
         if "open the camera" in audio_command :
             self.log("Opening camera")
             self.objdetect.detect_object()
-            return "Object detection done"
+            return None
         elif "translate" in audio_command :
             audio_command = audio_command.split("translate")
             text = audio_command[1]
@@ -29,9 +31,14 @@ class AI() :
         else :
             output = self.chat.generate_text(audio)
             return output
+        
+    def speak(self, prompt) :
+        self.speaker.text_to_speech(prompt) 
 
 if __name__ ==  '__main__' :
     print("Starting ...")
     bot = AI()
     output = bot.run()
-    print(output)
+    if(output != None) :
+        print(output)
+        bot.speak(output)
