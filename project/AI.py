@@ -3,6 +3,10 @@ from text_generation import ChatAI
 from object_detection import ObjectDetection
 from translate import Translator
 from tts import TTS
+from text3d import ThreeDGenerator
+from huggingface_hub import login
+
+login("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")
 
 class AI() :
     def __init__(self) -> None:
@@ -11,6 +15,7 @@ class AI() :
         self.objdetect = ObjectDetection()
         self.translator = Translator()
         self.speaker = TTS()
+        self.threed = ThreeDGenerator
 
     def log(self, output) :
         print(output)
@@ -23,11 +28,16 @@ class AI() :
             self.log("Opening camera")
             self.objdetect.detect_object()
             return None
-        elif "translate" in audio_command :
+        elif audio_command.startswith("translate"):
             audio_command = audio_command.split("translate")
             text = audio_command[1]
             output = self.translator.translate_enfr(text)
             return output
+        elif audio_command.startswith("generate in 3d") :
+            audio_command = audio_command.split("generate in 3d")
+            text = audio_command[1]
+            self.threed.generate3D(text)
+            return None
         else :
             output = self.chat.generate_text(audio)
             return output

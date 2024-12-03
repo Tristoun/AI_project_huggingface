@@ -1,9 +1,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from huggingface_hub import login
 import torch
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.benchmark = True
-login("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")
 
 class ChatAI() :
     def __init__(self) -> None:
