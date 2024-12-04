@@ -12,7 +12,8 @@ Require Librairies:
 - pip install sentencepiece
 - pip install sacremoses
 - pip install elevenlabs
-- pip install git+https://github.com/huggingface/diffusers
+- pip install diffusers
+- pip install keyboard
 
 When launching the project it may take a while since it needs to download the AI
 If you have warning during model installation, you can enable developper parameter in your settings.
