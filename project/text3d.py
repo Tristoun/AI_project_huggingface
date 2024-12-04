@@ -5,21 +5,16 @@ from diffusers.utils import export_to_gif
 from PIL import Image
 import time
 
-
 class ThreeDGenerator() :
     def __init__(self) -> None:
         self.id = "openai/shap-e"
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.pipe = ShapEPipeline.from_pretrained(self.id).to(self.device)
+        self.pipe = ShapEPipeline.from_pretrained(self.id, trust_remote_code=True, allow_pickle=True).to(self.device)
 
 
     def generate3D(self, prompt):
         guidance_scale = 15.0 
-        images = self.pipe(
-            prompt,
-            guidance_scale=guidance_scale,
-            num_inference_steps=64,
-        ).images
+        images = self.pipe(prompt, guidance_scale=guidance_scale, num_inference_steps=32).images
 
         if isinstance(images, list) and isinstance(images[0], list):
             images = [img for sublist in images for img in sublist]
@@ -53,3 +48,7 @@ class ThreeDGenerator() :
         export_to_gif(images_resized, gif_path)
 
         print(f"GIF exported with success : {gif_path}")
+
+if __name__ == "__main__" :
+    bot = ThreeDGenerator()
+    bot.generate3D("Pikachu")
